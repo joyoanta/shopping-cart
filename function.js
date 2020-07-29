@@ -1,19 +1,38 @@
+// + button event handeler 
+
 var productAdd = document.getElementById("product-add");
 productAdd.addEventListener("click", function(){
 
-  var valueAdd =  document.getElementById("value-add").value;
+  var valueAdd =  document.getElementById("valueAdd").value;
   var valueNumber = parseFloat (valueAdd);
   var newValueNumber = valueNumber + 1 ; 
-  document.getElementById("value-add").value = newValueNumber; 
+  document.getElementById("valueAdd").value = newValueNumber; 
+
+  
+
+ var productOne =  document.getElementById("productOne").innerText
+ productOneNumber = parseFloat(productOne);
+
+ var productOnePrice = 1219 * newValueNumber
+ document.getElementById("productOne").innerText = productOnePrice;
+
+
 })
 
-var productRemove = document.getElementById("product-remove");
+
+// - button event handeler 
+
+var productRemove = document.getElementById("productRemove");
 productRemove.addEventListener("click", function(){
 
-    var valueAdd =  document.getElementById("value-add").value;
-    var valueNumber = parseFloat (valueAdd);
-    var newValueNumber = valueNumber + (-1) ;
-    document.getElementById("value-add").value = newValueNumber;
+  var valueAdd =  document.getElementById("valueAdd").value;
+  var valueNumber = parseFloat (valueAdd);
+  var newValueNumber = valueNumber - 1 ; 
+  document.getElementById("valueAdd").value = newValueNumber; 
 
+  var productOne =  document.getElementById("productOne").innerText
+  productOneNumber = parseFloat(productOne);
+ 
+  var productOnePrice = productOneNumber -1219;
+  document.getElementById("productOne").innerText = productOnePrice;
 })
-
