@@ -1,94 +1,46 @@
-// product one  + button event handeler 
+// case 
 
-var productAdd = document.getElementById("product-add");
-productAdd.addEventListener("click", function(){
-
-  var valueAdd =  document.getElementById("valueAdd").value;
-  var valueNumber = parseFloat (valueAdd);
-
-  var newValueNumber = valueNumber + 1 ; 
-  document.getElementById("valueAdd").value = newValueNumber; 
-
+document.getElementById("case-increase").addEventListener('click', function(){
   
-
- var productOne =  document.getElementById("productOne").innerText
- productOneNumber = parseFloat(productOne);
-
- var productOnePrice = 1219 * newValueNumber
- document.getElementById("productOne").innerText = productOnePrice;
-
-
+  handleProductChange(true)
+  // var caseInput = document.getElementById('case-count');
+  // var caseCount = parseInt(caseInput.value);
+  // var caseNewCount = caseCount + 1 ; 
+  // caseInput.value = caseNewCount; 
+  // var casetotal = caseNewCount * 59 ; 
+  // document.getElementById("case-total").innerText = casetotal; 
 })
 
 
-// product one - button event handeler 
+document.getElementById("case-decrease").addEventListener('click', function(){
 
-var productRemove = document.getElementById("productRemove");
-productRemove.addEventListener("click", function(){
-
-  var valueAdd =  document.getElementById("valueAdd").value;
-  var valueNumber = parseFloat (valueAdd);
-  var newValueNumber = valueNumber + (-1) ; 
-  document.getElementById("valueAdd").value = newValueNumber; 
-
-  var productOne =  document.getElementById("productOne").innerText
-  productOneNumber = parseFloat(productOne);
- 
-  var productOnePrice = productOneNumber - 1219;
-  document.getElementById("productOne").innerText = productOnePrice;
-})
-
-
-// Product two + button event handeler
-
-var productPlus = document.getElementById("productPlus");
-productPlus.addEventListener("click", function(){
-
-  var valueAdd =  document.getElementById("valueChange").value;
-  var valueNumber = parseFloat (valueAdd);
-
-  var newValueNumber = valueNumber + 1 ; 
-  document.getElementById("valueChange").value = newValueNumber; 
-
+  handleProductChange(false)
   
-
- var productTwo =  document.getElementById("productTwo").innerText
- productOneNumber = parseFloat(productTwo);
-
- var productTwoPrice = 59 * newValueNumber
- document.getElementById("productTwo").innerText = productTwoPrice;
-
+  // var caseInput = document.getElementById('case-count');
+  // var caseCount = parseInt(caseInput.value);
+  // var caseNewCount = caseCount - 1 ; 
+  // caseInput.value = caseNewCount; 
+  // var casetotal = caseNewCount * 59 ; 
+  // document.getElementById("case-total").innerText = casetotal; 
 
 })
 
+function handleProductChange(isIncrease) {
 
-// Product two - button event handeler
+  var caseInput = document.getElementById('case-count');
+  var caseCount = parseInt(caseInput.value);
+  // var caseNewCount = caseCount - 1 ; 
+  var caseNewCount = caseCount;
+if (isIncrease == true) {
+  caseNewCount = caseCount + 1 ;
+}
 
-var productMinus = document.getElementById("productMinus");
-productMinus.addEventListener("click", function(){
+if (isIncrease == false && caseCount> 0){
+  caseNewCount = caseCount - 1 ;
+}
 
-  var valueChange =  document.getElementById("valueChange").value;
-  var valueNumber = parseFloat (valueChange);
-  var newValueNumber = valueNumber + (-1) ; 
-  document.getElementById("valueChange").value = newValueNumber; 
-
-  var productTwo =  document.getElementById("productTwo").innerText
-  productTwoNumber = parseFloat(productTwo);
- 
-  var productTwoPrice = productTwoNumber - 59;
-  document.getElementById("productTwo").innerText = productTwoPrice;
-})
-
-
-// subtotal 
-
-
-
-
-
-
-
-
-
-
-
+  caseInput.value = caseNewCount; 
+  var casetotal = caseNewCount * 59 ; 
+  document.getElementById("case-total").innerText = casetotal; 
+  
+}
